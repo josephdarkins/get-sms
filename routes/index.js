@@ -30,7 +30,7 @@ router.post('/data/', function(req, res, next){
    console.log("Time: " + JSON.stringify(req.body.RECEIVETIME));
    console.log("GUID: " + JSON.stringify(req.body.GUID));
 
-   LastSMS = req.body;
+   LastSMS = JSON.stringify(req.body);
 
    res.end();
 })
