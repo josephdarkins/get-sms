@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  h1= title
+  body
+    each test in data.players
+        li player #{test.name} has scored #{test.goals} goals
+    
+
