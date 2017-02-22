@@ -33,7 +33,7 @@ router.post('/data/', function(req, res, next){
    console.log("Body: " + JSON.stringify(req.body.BODY));
    console.log("From: " + JSON.stringify(req.body.MONUMBER));
    console.log("To: " + JSON.stringify(req.body.DESTINATION));
-   console.log("Time: " + JSON.stringify(req.body.RECEIVETIME);
+   console.log("Time: " + JSON.stringify(req.body.RECEIVETIME));
    console.log("GUID: " + JSON.stringify(req.body.GUID));
 
    res.end("yes");
