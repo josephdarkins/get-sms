@@ -30,11 +30,11 @@ router.post('/data/', function(req, res, next){
    var jsonBody = JSON.stringify(req.body);
 
    console.log(jsonBody);
-   console.log("Body: " + jsonBody.BODY);
-   console.log("From: " + jsonBody.MONUMBER);
-   console.log("To: " + jsonBody.DESTINATION);
-   console.log("Time: " + jsonBody.RECEIVETIME);
-   console.log("Time: " + jsonBody.GUID);
+   console.log("Body: " + JSON.stringify(req.body.BODY);
+   console.log("From: " + JSON.stringify(req.body.MONUMBER);
+   console.log("To: " + JSON.stringify(req.body.DESTINATION);
+   console.log("Time: " + JSON.stringify(req.body.RECEIVETIME);
+   console.log("GUID: " + JSON.stringify(req.body.GUID);
 
    res.end("yes");
 })
