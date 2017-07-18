@@ -21,6 +21,10 @@ router.get('/data/', function(req, res, next){
 
 router.post('/data/', function(req, res, next){
 
+  console.log(request.body.Body);
+  console.log(request.body.From);  
+  response.send("<Response><Message>" + req.body.Body + "</Message></Response>");
+
    var jsonBody = JSON.stringify(req.body);
 
    console.log(jsonBody);
