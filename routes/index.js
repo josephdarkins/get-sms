@@ -34,8 +34,16 @@ router.post('/data/', function(req, res, next){
 
    LastSMS = req.body.Body;
    
-   console.log('sid ' + process.env.TWILIO_SID);
-   console.log('auth ' + process.env.TWILIO_AUTH);
+   if(req.body.Body = "This is the time"){
+    console.log('sending message');
+    client.messages.create({
+      to: "+447977727374",
+      from: "+441133206457",
+      body: "This really is the time!! Hello."
+    });
+    console.log('sent');
+
+   }else{
    console.log('sending message');
     client.messages.create({
       to: "+447977727374",
@@ -43,7 +51,7 @@ router.post('/data/', function(req, res, next){
       body: "Hello from Twilio!"
     });
     console.log('sent');
-   
+   }
 
    res.end();
 })
