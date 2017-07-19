@@ -26,21 +26,13 @@ router.get('/data/', function(req, res, next){
 })
 
 router.post('/data/', function(req, res, next){
-
-  console.log(req.body.Body);
-  console.log(req.body.From);  
-  response.send("<Response><Message>" + req.body.Body + "</Message></Response>");
-
-   var jsonBody = JSON.stringify(req.body);
-
+  
    console.log(jsonBody);
-   console.log("Body: " + JSON.stringify(req.body.BODY));
-   console.log("From: " + JSON.stringify(req.body.MONUMBER));
-   console.log("To: " + JSON.stringify(req.body.DESTINATION));
-   console.log("Time: " + JSON.stringify(req.body.RECEIVETIME));
-   console.log("GUID: " + JSON.stringify(req.body.GUID));
+   console.log("Body: " + req.body.Body);
+   console.log("From: " + req.body.From);
+   console.log("To: " + req.body.To);
 
-   LastSMS = JSON.stringify(req.body);
+   LastSMS = req.Body;
    
    console.log('sending message');
     client.sendMessage({
