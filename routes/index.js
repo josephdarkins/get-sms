@@ -1,5 +1,10 @@
 var express = require('express');
 var router = express.Router();
+var twilio = require('twilio');
+
+ 
+
+var client = new twilio(process.env.TWILIO_SID, process.env.TWILIO_AUTH);
 
 var LastSMS = "";
 
@@ -35,9 +40,23 @@ router.post('/data/', function(req, res, next){
    console.log("GUID: " + JSON.stringify(req.body.GUID));
 
    LastSMS = JSON.stringify(req.body);
+   
+   if(JSON.stringify(req.body.BODY) = "This is the time"){
+      client.sendMessage({
+      to: '+447977727374',
+      from: JSON.stringify(req.body.DESTINATION),
+      body: 'Hello from Twilio!'
+     });
+   }
 
    res.end();
 })
+
+
+//TODO: This is where I need to put the key value pairs for request response
+// process.env.TWILIO_SID to get the SID for the SMS
+
+//TODO: Shall I do this through a database? Or just through JSON?
 
 module.exports = router;
 
