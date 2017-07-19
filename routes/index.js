@@ -42,13 +42,13 @@ router.post('/data/', function(req, res, next){
 
    LastSMS = JSON.stringify(req.body);
    
-   if(JSON.stringify(req.body.BODY) = "This is the time"){
+   
       client.sendMessage({
       to: '+447977727374',
       from: JSON.stringify(req.body.DESTINATION),
       body: 'Hello from Twilio!'
      });
-   }
+   
 
    res.end();
 })
