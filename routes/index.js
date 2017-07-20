@@ -43,7 +43,7 @@ router.post('/data/', function(req, res, next){
       });
       console.log('sent');
    }
-   if(req.body.Body == "Kerian"){
+   if(req.body.Body == "Kieran"){
       console.log('sending message');
       client.messages.create({
         to: req.body.From,
