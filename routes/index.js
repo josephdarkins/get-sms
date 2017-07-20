@@ -35,22 +35,40 @@ router.post('/data/', function(req, res, next){
    LastSMS = req.body.Body;
    
    if(req.body.Body == "This is the time"){
-    console.log('sending message');
-    client.messages.create({
-      to: "+447977727374",
-      from: "+441133206457",
-      body: "This really is the time!! Hello."
-    });
-    console.log('sent');
-
-   }else{
-   console.log('sending message');
-    client.messages.create({
-      to: "+447977727374",
-      from: "+441133206457",
-      body: "Hello from Twilio!"
-    });
-    console.log('sent');
+      console.log('sending message');
+      client.messages.create({
+        to: req.body.From,
+        from: req.body.To,
+        body: "This really is the time!!"
+      });
+      console.log('sent');
+   }
+   if(req.body.Body == "Kerian"){
+      console.log('sending message');
+      client.messages.create({
+        to: req.body.From,
+        from: req.body.To,
+        body: "K-Dog, you have fun at the Cricket last night?"
+      });
+      console.log('sent');
+   }
+   if(req.body.Body == "Tamara"){
+      console.log('sending message');
+      client.messages.create({
+        to: req.body.From,
+        from: req.body.To,
+        body: "Hello Tamara, your next clue is -who serves coffee at RateSetter?-."
+      });
+      console.log('sent');
+   }
+   else{
+      console.log('sending message');
+      client.messages.create({
+        to: req.body.From,
+        from: req.body.To,
+        body: "I don't understand. Please text 'Tamara' or 'Kieran' for more."
+      });
+      console.log('sent');
    }
 
    res.end();
