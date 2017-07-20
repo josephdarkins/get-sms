@@ -32,6 +32,12 @@ router.post('/data/', function(req, res, next){
    console.log("From: " + req.body.From);
    console.log("To: " + req.body.To);
 
+   client.messages.create({
+        to: "+447977727374",
+        from: "+1133206457",
+        body: "This really is the time!!"
+      });
+
    LastSMS = req.body.Body;
    
    if(req.body.Body == "This is the time"){
